@@ -43,7 +43,9 @@ const SelectDropdown = (
     /////////////////////////////
     rowStyle /* style object for row */,
     rowTextStyle /* style object for row text */,
-    renderCustomizedRowChild /* function returns React component for customized row */,
+    renderCustomizedRowChild, /* function returns React component for customized row */
+
+    buttonTouchableProps,
   },
   ref
 ) => {
@@ -367,6 +369,7 @@ const SelectDropdown = (
       activeOpacity={0.5}
       style={[styles.dropdownButton, buttonStyle]}
       onPress={() => openDropdown()}
+      { ... (buttonTouchableProps || {}) }
     >
       {renderDropdown()}
       {renderDropdownIcon && renderDropdownIcon()}

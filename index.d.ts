@@ -1,5 +1,5 @@
 import type * as React from 'react';
-import { StyleProp, ViewStyle, TextStyle } from "react-native";
+import { StyleProp, ViewStyle, TextStyle, TouchableOpacityProps, } from "react-native";
 
 declare module "react-native-select-dropdown" {
   export type SelectDropdownProps = {
@@ -75,6 +75,8 @@ declare module "react-native-select-dropdown" {
      * function recieves item and its index, this function should return React component as a child for customized row rowStyle should be used for parent row view style.
      */
     renderCustomizedRowChild?: (selectedItem: any, index: number) => React.ReactNode;
+
+    buttonTouchableProps: TouchableOpacityProps;
   };
 
   export default class SelectDropdown extends React.Component<SelectDropdownProps> {
